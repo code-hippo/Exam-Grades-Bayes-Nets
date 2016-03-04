@@ -1,0 +1,35 @@
+variable  "Difficulty" { //2 values
+	type discrete[2] { "0" "1" };
+	property "position = (54, 35)" ;
+}
+variable  "Intelligence" { //2 values
+	type discrete[2] { "0" "1" };
+	property "position = (184, 113)" ;
+}
+variable  "Grade" { //3 values
+	type discrete[3] { "1" "2" "3" };
+	property "position = (68, 114)" ;
+}
+variable  "SAT" { //2 values
+	type discrete[2] { "0" "1" };
+	property "position = (145, 36)" ;
+}
+variable  "Letter" { //2 values
+	type discrete[3] { "0" "1" };
+	property "position = (111, 177)" ;
+}
+probability (  "Difficulty" ) { //1 variable(s) and 2 values
+	table -1 -1 ;
+}
+probability (  "Intelligence" ) { //1 variable(s) and 2 values
+	table -1 -1 ;
+}
+probability ( "SAT"  "Intelligence" ) { //2 variable(s) and 4 values
+	table -1 -1 -1 -1 ;
+}
+probability (  "Grade" "Intelligence" "Difficulty" ) { //3 variable(s) and 12 values
+	table -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 ;
+}
+probability (  "Letter"  "Grade" ) { //2 variable(s) and 6 values
+	table -1 -1 -1 -1 -1 -1 ;
+}
